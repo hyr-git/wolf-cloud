@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.hyr</groupId>
+    <artifactId>wolf-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>wolf-cloud-common</artifactId>
+  <name>wolf-cloud-common</name>
+   <version>1.0.0</version>
+  <url>http://maven.apache.org</url>
+ <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+     <dependency>
+		  <groupId>io.springfox</groupId>
+		  <artifactId>springfox-swagger2</artifactId>
+		  <version>${swagger2.version}</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>io.springfox</groupId>
+		  <artifactId>springfox-swagger-ui</artifactId>
+		  <version>${swagger2-ui.version}</version>
+		</dependency>
+		
+		<!-- 引入swagger-bootstrap-ui包 -->
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>swagger-bootstrap-ui</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+  </dependencies>
+    <build>  
+          <plugins>  
+              <plugin>  
+                  <groupId>org.apache.maven.plugins</groupId>  
+                  <artifactId>maven-compiler-plugin</artifactId>  
+                  <configuration>  
+                     <source>1.8</source>  
+                     <target>1.8</target>  
+                 </configuration>  
+             </plugin>  
+         </plugins>  
+     </build>
+</project>

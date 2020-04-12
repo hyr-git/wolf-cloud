@@ -1,0 +1,21 @@
+server:
+  port: 80
+  
+#在Feign中开启Hystrix
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: # 可以被压缩的类型
+       - text/xml
+       - application/xml
+       - application/json
+      min-request-size: 2048 # 超过2048的字节进行压缩
+  
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka

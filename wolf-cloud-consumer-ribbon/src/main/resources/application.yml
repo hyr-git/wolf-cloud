@@ -1,0 +1,11 @@
+server:
+  port: 80
+
+ribbon:
+  eureka:
+    enabled: false
+    
+WOLF-CLOUD-PROVIDER-PRODUCT:
+  ribbon:
+    listOfServers: http://localhost:8080,http://localhost:8081,http://localhost:8082  
+  
