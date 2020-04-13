@@ -1,0 +1,13 @@
+server:
+  port: 9501
+
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
+
+spring:
+  application:
+    name:  wolf-cloud-zuul-gateway
