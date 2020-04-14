@@ -3,11 +3,37 @@ server:
 
 eureka:
   client: # 客户端进行Eureka注册的配置
-    register-with-eureka: true
-    fetch-registry: true
+    #register-with-eureka: false
+    #fetch-registry: false
     service-url:
-      defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
-
+      #defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
+      defaultZone: http://admin:enjoy@eureka1:7001/eureka
+  #想使用feign来访问zuul，首先就应该让zuul注册到eureka中
+  instance:
+    instance-id: wolf-cloud-zuul-gateway
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 90 # 如果现在超过了5秒的间隔（默认是90秒）  
+      
 spring:
   application:
     name:  wolf-cloud-zuul-gateway
+  security:
+    user:
+      name: admin
+      password: enjoy  
+
+zuul:
+  prefix: /enjoy-api  #给网关路由添加前缀
+  routes:
+    # 给服务配置路由 将匹配/employee-proxy/**的请求路由到wolf-cloud-employee服务上去
+    wolf-cloud-employee:
+      path: /employee-proxy/**
+    wolf-cloud-provider-users:
+      path: /user-proxy/**   
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'routes'       
