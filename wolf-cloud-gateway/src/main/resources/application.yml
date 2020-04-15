@@ -1,0 +1,36 @@
+server:
+  port: 6604
+
+spring:
+  application:
+    name: wolf-cloud-gateway    
+  cloud:
+    gateway:
+      filter:
+        remove-non-proxy-headers:
+          headers:
+          - dummy
+      routes:
+        - id:  apiuser
+        # 重点！/info必须使用http进行转发，lb代表从注册中心获取服务
+          uri: lb://wolf-cloud-provider-users
+          predicates:
+          # 重点！转发该路径！,/userapi/**,
+          - Path=/userapi/**
+          # http://127.0.0.1:8090/users/get/1
+          # http://localhost:6601/userapi/user/users/2, 必须加上StripPrefix=1，否则访问服务时会带上userapi
+          #而不是我们期望的去掉userapi，只保留**部分
+          filters:
+          - StripPrefix=1
+        - id:  api2user
+          uri: lb://wolf-cloud-provider-users
+          predicates:
+          - Path=/userapi2/**
+          filters:
+          - StripPrefix=1
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http:admin:enjoy@//@eureka1:7001/eureka/
