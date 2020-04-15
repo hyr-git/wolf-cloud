@@ -13,9 +13,10 @@ logging:
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
+      #defaultZone: http://admin:enjoy@localhost:7001/eureka
       defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
   instance:
-    instance-id: wolfcloud-provider-users
+    instance-id: wolf-cloud-provider-users
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
     lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
@@ -23,7 +24,7 @@ eureka:
 
 
 info:
-  app.name: wolfcloud-provider-users
+  app.name: wolf-cloud-provider-users
   company.name: enjoy
   build.artifactId: $project.artifactId$
   build.modelVersion: $project.modelVersion$
