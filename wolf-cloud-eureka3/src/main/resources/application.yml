@@ -14,6 +14,7 @@ eureka: # 指定主机地址
   instance: # eureak实例定义
     hostname: eureka3 # 定义 Eureka 实例所在的主机名称
 
+
 spring:
   security:
     user:
