@@ -1,0 +1,9 @@
+windows环境域名配置
+eureka服务注册中心：
+使用域名访问需要配置本地域名信息
+打开指定的具体目录：
+   C:\Windows\System32\drivers\etc
+打开文件hosts文件，在最下方回车加入：
+127.0.0.1 eureka1
+127.0.0.1 eureka2
+127.0.0.1 eureka3
