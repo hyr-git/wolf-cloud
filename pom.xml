@@ -100,6 +100,7 @@
     <module>wolf-cloud-employee</module>
     
     <module>wolfcloud-provider-user-hystrix</module>
+    <module>wolf-cloud-zuul-gateway</module>
   </modules>
  
   <!-- 该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。自动从项目定义的仓库中下载。--> 

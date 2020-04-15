@@ -75,4 +75,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     	employeeList.add(new Employee(3L, "mark", "123456"));
     }
 
+	@Override
+	public List<Employee> listEmployees() {
+		return employeeList;
+	}
+
 }

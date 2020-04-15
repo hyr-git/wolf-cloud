@@ -32,7 +32,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping(value="/insert")
-    public ResultResopnse<?> insert(@RequestBody Employee user) {
+    public ResultResopnse insert(@RequestBody Employee user) {
         employeeService.insert(user);
         return ResultResopnse.success();
     }
@@ -47,6 +47,13 @@ public class EmployeeController {
     @GetMapping("/listEmployeesByIds")
     public ResultResopnse<List<Employee>> listEmployeesByIds(@RequestParam List<Long> ids) {
         List<Employee> userList= employeeService.listEmployeesByIds(ids);
+        LOGGER.info("根据ids获取用户信息，用户列表为：{}",userList);
+        return ResultResopnse.success(userList);
+    }
+    
+    @GetMapping("/listEmployees")
+    public ResultResopnse<List<Employee>> listEmployee() {
+        List<Employee> userList= employeeService.listEmployees();
         LOGGER.info("根据ids获取用户信息，用户列表为：{}",userList);
         return ResultResopnse.success(userList);
     }

@@ -24,5 +24,7 @@ public interface EmployeeService {
     Employee getByEmployeeName(String username);
 
     List<Employee> listEmployeesByIds(List<Long> ids);
+    
+    List<Employee> listEmployees();
 
 }

@@ -1,6 +1,8 @@
 package com.hyr.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hyr.commom.ResultResopnse;
 import com.hyr.feign.service.IEmployeeClientService;
 import com.hyr.feign.service.IProudctClientService;
+import com.hyr.feign.service.IZUUlClientService;
 import com.hyr.vo.Product;
 
 @RestController
@@ -26,6 +29,9 @@ public class ConsumerProductController {
 	
 	@Resource
     private IEmployeeClientService iEmployeeClientService;
+	
+    @Resource
+	private IZUUlClientService izuUlClientService;
 	
 	private static final Logger logger = LoggerFactory.getLogger("ConsumerProductController");
 	
@@ -68,7 +74,13 @@ public class ConsumerProductController {
         return  ResultResopnse.success(result);
     }
     
-    
+    @RequestMapping("/product/getProductAndUser")
+    public Object getProductAndUser(long id) {
+        Map<String,Object> result = new HashMap();
+        result.put("product",izuUlClientService.getProduct(id));
+        result.put("user",izuUlClientService.getUsers(id+""));
+        return  result;
+    }
     
     
    /* @GetMapping("/getEntityByUsername")
