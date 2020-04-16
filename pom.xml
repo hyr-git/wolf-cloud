@@ -99,7 +99,8 @@
     
     <module>wolf-cloud-employee</module>
     
-    <module>wolfcloud-provider-user-hystrix</module>
+    <module>wolf-cloud-provider-user-hystrix</module>
+    
     <module>wolf-cloud-zuul-gateway</module>
   </modules>
  
