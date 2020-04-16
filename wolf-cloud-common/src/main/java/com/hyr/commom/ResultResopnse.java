@@ -2,6 +2,8 @@ package com.hyr.commom;
 
 import java.io.Serializable;
 
+import com.hyr.constance.ResultCodeEnum;
+
 import io.swagger.annotations.ApiModelProperty;
 
 public class ResultResopnse <T> implements Serializable{
@@ -88,6 +90,11 @@ public class ResultResopnse <T> implements Serializable{
      */
     public static <T> ResultResopnse<T> error(String codeMsg) {
         return new ResultResopnse<>(codeMsg);
+    }
+    
+    // setResult
+    public static ResultResopnse setResult(ResultCodeEnum resultCodeEnum) {
+        return new ResultResopnse(resultCodeEnum.getCode(),resultCodeEnum.getMessage());
     }
 
     /**

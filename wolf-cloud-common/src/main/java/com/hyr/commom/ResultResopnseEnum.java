@@ -1,5 +1,8 @@
 package com.hyr.commom;
 
+import lombok.Getter;
+
+@Getter
 public enum ResultResopnseEnum {
 
     SUCCESS("200", "成功"),
