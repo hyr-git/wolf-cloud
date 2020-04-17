@@ -37,6 +37,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        
+       <!-- zipkin中已经包含了sleuth的在组件包故不需要单独引用sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
