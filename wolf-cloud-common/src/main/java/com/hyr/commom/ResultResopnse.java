@@ -93,7 +93,7 @@ public class ResultResopnse <T> implements Serializable{
     }
     
     // setResult
-    public static ResultResopnse setResult(ResultCodeEnum resultCodeEnum) {
+   public static ResultResopnse setResult(ResultCodeEnum resultCodeEnum) {
         return new ResultResopnse(resultCodeEnum.getCode(),resultCodeEnum.getMessage());
     }
 
