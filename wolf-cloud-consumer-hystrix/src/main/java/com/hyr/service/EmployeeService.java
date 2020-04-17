@@ -38,8 +38,10 @@ public class EmployeeService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${service-url.user-service}")
-    private String userServiceUrl;
+    
+    //TODO 需要设置具体的服务名称
+    //@Value("${service-url.user-service}")
+    private String userServiceUrl ="";
 
     @HystrixCommand(fallbackMethod = "fallbackMethod1")
     public ResultResopnse<?> getEmployee(Long id) {

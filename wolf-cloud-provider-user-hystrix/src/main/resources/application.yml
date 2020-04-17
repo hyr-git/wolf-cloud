@@ -4,7 +4,13 @@ server:
 spring:
  application:
    name: wolf-cloud-provider-users
-
+ zipkin:
+    base-url: http://localhost:9411 #所有的数据提交到此服务之中
+    sender:
+      type: web       #提交的类型是web 服务
+ sleuth:
+    sampler:
+      probability: 1.0 # 定义抽样比率，默认为0.1
 
 logging:
   level:
@@ -13,7 +19,6 @@ logging:
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
-      #defaultZone: http://admin:enjoy@localhost:7001/eureka
       defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
   instance:
     instance-id: wolf-cloud-provider-users

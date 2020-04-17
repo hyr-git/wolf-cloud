@@ -58,6 +58,12 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         
+      <!-- zipkin中已经包含了sleuth的在组件包故不需要单独引用sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+        
           <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
