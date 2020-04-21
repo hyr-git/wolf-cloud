@@ -27,10 +27,28 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
     </dependency>
     
-     <dependency>
+       <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+        <!-- zipkin中已经包含了sleuth的在组件包故不需要单独引用sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+        
+        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-     </dependency>
+            <artifactId>spring-boot-starter-security</artifactId>
+       </dependency> -->
+     
+        <!-- Admin 2.2.1 版本客户端引入依赖 -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${dependencies.dependency.version}</version>
+        </dependency>
      
      <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -59,7 +77,6 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.5</version>
-        </dependency>
+            </dependency>
   </dependencies>
 </project>
