@@ -18,10 +18,10 @@ eureka:
 spring:
   application:
     name:  wolf-cloud-zuul-gateway
-  #security:
-    #user:
-      #name: admin
-      #password: enjoy
+  security:
+    user:
+      name: admin
+      password: enjoy
     boot:
       admin:
         client:

@@ -8,10 +8,10 @@ spring:
       discovery:
         # 不显示wolf-cloud-boot-admin-server的监控信息
         ignored-services: ${spring.application.name}
-  #security:
-    #user:
-      #name: admin
-      #password: enjoy
+  security:
+    user:
+      name: admin
+      password: enjoy
 
 
 management:
@@ -19,7 +19,6 @@ management:
     web:
       server:
         auto-time-requests: false
-        
         
 eureka:  
   server:
