@@ -29,7 +29,11 @@ spring:
           filters:
           - StripPrefix=1
 
-
+  boot:
+    admin:
+      client:
+        # 配置admin-server地址
+        url: http://localhost:9301
 eureka:
   client:
     serviceUrl:

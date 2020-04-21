@@ -38,4 +38,5 @@ eureka:
     service-url:
       #配置Eureka注册中心即Eureka服务端的地址,单机状态配置自己的地址
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://admin:enjoy@localhost:7001/eureka/,http://admin:enjoy@localhost:7002/eureka/,http://admin:enjoy@localhost:7003/eureka/        
+      defaultZone: http://admin:enjoy@localhost:7001/eureka/
+      #defaultZone: http://admin:enjoy@localhost:7001/eureka/,http://admin:enjoy@localhost:7002/eureka/,http://admin:enjoy@localhost:7003/eureka/        

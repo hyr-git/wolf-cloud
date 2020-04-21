@@ -18,6 +18,24 @@ spring:
       #password: enjoy  # 认证密码
       #roles:
       # - USER # 授权角色
+  boot:
+    admin:
+      client:
+        # 配置admin-server地址
+        url: http://localhost:9301
+
+###boot actuator端点启用和暴露：默认情况下出shutdown端点是关闭的,其他都是启用的     
+###生产环境需要考虑暴露的端点信息 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'      
+  endpoint:
+    health:
+      show-details: always # 访问/actuator/health时显示详细信息,而不是仅仅显示up
+# 添加开启admin的日志监控
+        
 eureka:
   client: # 客户端进行Eureka注册的配置
     service-url:
@@ -38,3 +56,4 @@ info:
 logging:
   level:
     com.hyr.mapper: debug
+  file: wolf-cloud-zuul-gateway_admin-client.log        
