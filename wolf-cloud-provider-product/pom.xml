@@ -21,11 +21,13 @@
             <groupId>com.hyr</groupId>
             <artifactId>wolf-cloud-api</artifactId>
         </dependency>
-        <dependency>
+       <!--  
+         暂时屏蔽该功能,会导致spring boot admin的使用  2020年4月21日 星期二
+         <dependency>
             <groupId>com.hyr</groupId>
             <artifactId>wolf-cloud-security</artifactId>
             <version>1.0.0</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -39,10 +41,6 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
@@ -50,6 +48,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+        <!-- zipkin中已经包含了sleuth的在组件包故不需要单独引用sleuth -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+        
         <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
