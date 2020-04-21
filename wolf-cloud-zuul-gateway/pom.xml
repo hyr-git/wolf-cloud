@@ -33,10 +33,12 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
-		<dependency>
+	<!-- 	
+	    为了测试spring boot admin 暂时屏蔽具体的安全认证
+	    <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        </dependency> -->
         
        <!-- zipkin中已经包含了sleuth的在组件包故不需要单独引用sleuth -->
 		<dependency>

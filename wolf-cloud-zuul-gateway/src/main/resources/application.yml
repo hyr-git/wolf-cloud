@@ -3,11 +3,11 @@ server:
 
 eureka:
   client: # 客户端进行Eureka注册的配置
-    #register-with-eureka: false
-    #fetch-registry: false
     service-url:
-      #defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
-      defaultZone: http://admin:enjoy@eureka1:7001/eureka
+       #defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
+       defaultZone: http://admin:enjoy@eureka1:7001/eureka
+    #fetch-registry: false
+    #register-with-eureka: false
   #想使用feign来访问zuul，首先就应该让zuul注册到eureka中
   instance:
     instance-id: wolf-cloud-zuul-gateway
@@ -18,10 +18,10 @@ eureka:
 spring:
   application:
     name:  wolf-cloud-zuul-gateway
-  security:
-    user:
-      name: admin
-      password: enjoy  
+  #security:
+    #user:
+      #name: admin
+      #password: enjoy  
 
   zipkin:
     base-url: http://localhost:9411 #所有的数据提交到此服务之中
@@ -40,8 +40,10 @@ zuul:
     wolf-cloud-provider-users:
       path: /user-proxy/**   
       
+####boot actuator端点启用和暴露：默认情况下出shutdown端点是关闭的,其他都是启用的     
+###生产环境需要考虑暴露的端点信息 
 management:
   endpoints:
     web:
       exposure:
-        include: 'routes'       
+        include: '*'      
