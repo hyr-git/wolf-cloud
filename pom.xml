@@ -36,6 +36,7 @@
         <druid.version>1.1.14</druid.version>
         <swagger2.version>2.8.0</swagger2.version>
         <swagger2-ui.version>2.8.0</swagger2-ui.version>
+        <dependencies.dependency.version>2.2.1</dependencies.dependency.version>
        <!--  
         <junit-version>4.13-rc-1</junit-version>
         
@@ -102,6 +103,8 @@
     <module>wolf-cloud-provider-user-hystrix</module>
     
     <module>wolf-cloud-zuul-gateway</module>
+    <module>wolf-cloud-config</module>
+    <module>wolf-cloud-boot-admin-server</module>
   </modules>
  
   <!-- 该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。自动从项目定义的仓库中下载。--> 
