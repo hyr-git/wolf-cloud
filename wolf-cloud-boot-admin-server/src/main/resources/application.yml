@@ -3,10 +3,15 @@ server:
 spring:
   application:
     name: wolf-cloud-boot-admin-server
+  boot:
+    admin:
+      discovery:
+        # 不显示wolf-cloud-boot-admin-server的监控信息
+        ignored-services: ${spring.application.name}
   #security:
     #user:
       #name: admin
-     # password: enjoy
+      #password: enjoy
 
 
 management:
@@ -33,4 +38,4 @@ eureka:
     service-url:
       #配置Eureka注册中心即Eureka服务端的地址,单机状态配置自己的地址
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://admin:enjoy@localhost:7001/eureka/        
+      defaultZone: http://admin:enjoy@localhost:7001/eureka/,http://admin:enjoy@localhost:7002/eureka/,http://admin:enjoy@localhost:7003/eureka/        

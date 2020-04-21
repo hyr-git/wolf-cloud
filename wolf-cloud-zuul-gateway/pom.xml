@@ -33,6 +33,7 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
+		
 	<!-- 	
 	    为了测试spring boot admin 暂时屏蔽具体的安全认证
 	    <dependency>
