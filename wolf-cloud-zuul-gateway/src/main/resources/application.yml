@@ -47,3 +47,6 @@ management:
     web:
       exposure:
         include: '*'      
+  endpoint:
+    health:
+      show-details: always # 访问/actuator/health时显示详细信息,而不是仅仅显示up
