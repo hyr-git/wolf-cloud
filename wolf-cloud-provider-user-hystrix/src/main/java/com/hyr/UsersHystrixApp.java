@@ -6,7 +6,7 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableCircuitBreaker
+@EnableCircuitBreaker //开启hystrix熔断
 @EnableEurekaClient
 public class UsersHystrixApp {
     public static void main(String[] args) {
