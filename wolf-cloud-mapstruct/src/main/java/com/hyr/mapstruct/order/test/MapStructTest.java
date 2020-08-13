@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.hyr.mapstruct.order.convert.OrderUtilMapper;
 import com.hyr.mapstruct.order.dto.OrderQueryParam;
-import com.hyr.mapstruct.order.dto.OrderUtilMapper;
 import com.hyr.mapstruct.order.entity.Order;
 
 public class MapStructTest {
