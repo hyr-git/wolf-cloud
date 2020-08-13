@@ -27,6 +27,7 @@ public class MapStructTest {
         
         OrderQueryParam orderQueryParam = OrderUtilMapper.INSTANCE.entity2queryParam(order);
         System.out.println(orderQueryParam);
+        
         assertEquals(orderQueryParam.getOrderSn(), order.getOrderSn());
         assertEquals(orderQueryParam.getOrderType(), order.getOrderType());
         assertEquals(orderQueryParam.getReceiverKeyword(), order.getReceiverKeyword());
