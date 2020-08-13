@@ -1,0 +1,5 @@
+com\hyr\mapstruct\order\dto\OrderQueryParam.class
+com\hyr\mapstruct\order\dto\OrderUtilMapperImpl.class
+com\hyr\mapstruct\order\entity\Order.class
+com\hyr\mapstruct\order\test\MapStructTest.class
+com\hyr\mapstruct\order\dto\OrderUtilMapper.class
